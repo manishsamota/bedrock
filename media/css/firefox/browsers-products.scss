@@ -526,11 +526,21 @@ $url-download-link-hover: svg-url($download-link-hover);
 
 // box around form
 .mzp-c-emphasis-box.t-account {
-    @include light-links;
     background: $color-ink-80 linear-gradient($color-violet-50 -100%, $color-ink-80);
     color: $color-white;
     margin: 0 auto $v-grid-xs auto;
     position: relative;
+
+    a:link,
+    a:visited {
+        color: $color-white;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-white;
+        }
+    }
 
     @media #{$mq-sm} {
         margin-bottom: $v-grid-md;
@@ -567,6 +577,10 @@ $url-download-link-hover: svg-url($download-link-hover);
 .fxa-form-cta {
     max-width: 560px;
     margin: 0 auto;
+
+    .mzp-c-form-title {
+        @include font-firefox;
+    }
 
     @media #{$mq-md} {
         margin: 0;
